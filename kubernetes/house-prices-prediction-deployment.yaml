@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: house-prices-prediction-deployment
+spec:
+  selector:
+    matchLabels:
+      app: house-prices-prediction
+  template:
+    metadata:
+      labels:
+        app: house-prices-prediction
+    spec:
+      containers:
+        - name: house-prices-prediction-app
+          image: davidasrocha/house-prices-prediction
+          ports: 
+            - name: http
+              containerPort: 80
+      imagePullSecrets:
+        - name: private_docker_cred
