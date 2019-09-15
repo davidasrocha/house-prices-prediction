@@ -8,6 +8,7 @@ docker build --force-rm --no-cache --rm -t house-prices-prediction .
 
 # Step 2: 
 # List docker images
+docker images
 
 # Step 3: 
 # Run flask app
